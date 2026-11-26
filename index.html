@@ -1,0 +1,500 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RecipeNest | Cook What You Have</title>
+<meta content="Discover recipes using ingredients you already have and plan your meals." name="description"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Main stylesheet -->
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+<!--
+    PAGE STRUCTURE
+    The header contains the main navigation and palette controls.
+    The sidebar links switch between the Home, Recipe, Meal and Profile views.
+-->
+<!-- ================= NAVIGATION ================= -->
+<header class="navbar">
+<a aria-label="RecipeNest home" class="logo" data-app-view="home" href="#home">
+<span aria-hidden="true" class="logo-icon">
+<svg fill="none" height="25" viewBox="0 0 32 32" width="25">
+<circle cx="15.5" cy="16" r="7.2" stroke="currentColor" stroke-width="2.2"></circle>
+<path d="M5 7v7M2.8 7v4.2c0 1.4 1 2.4 2.2 2.4s2.2-1 2.2-2.4V7M5 13.6V25M26.5 7c-2.4 2.1-3.5 4.8-3.5 8.2V25M26.5 7v18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</span>
+<span class="logo-word"><span>Recipe</span><span>Nest</span></span>
+</a>
+<nav class="nav-links"><a data-app-view="home" href="#home">Home</a><a data-home-anchor="true" href="#about">About</a><a data-home-anchor="true" href="#benefits">Benefits</a><a data-home-anchor="true" href="#services">Services</a></nav>
+<div aria-label="Header colour palette" class="palette-picker">
+<button aria-label="Sage green" class="palette-swatch sage" data-palette="sage" title="Sage green" type="button"></button>
+<button aria-label="Terracotta" class="palette-swatch terra" data-palette="terra" title="Terracotta" type="button"></button>
+<button aria-label="Ocean blue" class="palette-swatch ocean" data-palette="ocean" title="Ocean blue" type="button"></button>
+<button aria-label="Lavender" class="palette-swatch lavender" data-palette="lavender" title="Lavender" type="button"></button>
+<button aria-label="Olive green" class="palette-swatch olive" data-palette="olive" title="Olive green" type="button"></button>
+<button aria-label="Dusty rose" class="palette-swatch rose" data-palette="rose" title="Dusty rose" type="button"></button>
+</div>
+<a class="nav-button" data-app-view="recipe" href="#recipe-view">Start Cooking →</a>
+<!-- Profile button: opens the profile menu without navigating immediately -->
+<button
+    aria-expanded="false"
+    aria-haspopup="true"
+    aria-label="Open Login or Profile menu"
+    aria-controls="profileMenu"
+    class="profile-button"
+    id="profileButton"
+    type="button"
+>
+    <svg
+        fill="none"
+        height="23"
+        viewBox="0 0 24 24"
+        width="23"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="1.8"
+    >
+        <circle cx="12" cy="8" r="4"></circle>
+        <path d="M4 21 C4 16 8 14 12 14 C16 14 20 16 20 21"></path>
+    </svg>
+</button>
+
+<!-- Profile dropdown: contains account access only -->
+<div class="profile-menu" id="profileMenu" hidden>
+    <a
+        data-app-view="profile"
+        href="#profile-view"
+    >
+        Profile / Sign in
+    </a>
+
+    <small class="palette-hint">
+        Choose a header colour using the six circles in the navigation bar.
+    </small>
+</div>
+<!-- Mobile-only button for opening the sidebar navigation. -->
+<button aria-controls="mainSidebar" aria-expanded="false" class="sidebar-toggle" id="sidebarToggle" type="button">
+<span aria-hidden="true">☰</span> Menu
+        </button>
+</header>
+<!-- Persistent left navigation. These links jump to existing sections. -->
+<aside aria-label="Main website navigation" class="sidebar" id="mainSidebar"><nav aria-label="Workspace sections" class="sidebar-nav"><a class="sidebar-link" data-app-view="recipe" data-sidebar-target="recipe" href="#recipe-view"><span aria-hidden="true" class="sidebar-icon">🥕</span><span><strong>Recipe Planner</strong><small>Pantry and discover recipes</small></span></a><a class="sidebar-link" data-app-view="meal" data-sidebar-target="meal" href="#meal-view"><span aria-hidden="true" class="sidebar-icon">🍽️</span><span><strong>Meal Planner</strong><small>Plan meals and calories</small></span></a><a class="sidebar-link" data-app-view="profile" data-sidebar-target="profile" href="#profile-view"><span aria-hidden="true" class="sidebar-icon">👤</span><span><strong>Login / Profile</strong><small>Your account and progress</small></span></a></nav></aside>
+<div class="sidebar-overlay" hidden="" id="sidebarOverlay"></div>
+<main>
+<!--
+    HOME VIEW
+    The homepage introduces RecipeNest and explains its benefits and services.
+    The planner tools live in separate views below, so the homepage stays introductory.
+-->
+<!-- ================= HERO SECTION ================= -->
+<!-- ================= QUICK STATS ================= -->
+<!-- ================= PANTRY SECTION ================= -->
+<!-- ================= RECIPE DISCOVERY ================= -->
+<!-- ================= MEAL PLANNER ================= -->
+<!-- ================= GROCERY LIST ================= -->
+<!-- ================= ABOUT AND BENEFITS ================= -->
+<!-- ================= NUTRITION DASHBOARD ================= -->
+<!-- ================= PLANNER CHOICES ================= -->
+<div class="app-view home-view" data-page-view="home" id="home-view"><section class="hero" id="home">
+<div class="hero-content">
+<span class="eyebrow">
+                    YOUR KITCHEN. YOUR POSSIBILITIES.
+                </span>
+<h1>
+                    Cook smarter.<br/>
+                    Eat better.<br/>
+<em>Waste less.</em>
+</h1>
+<p>
+                    Discover delicious meals using ingredients
+                    you already have. Plan your day, explore recipes,
+                    and make every ingredient count.
+                </p>
+<div class="hero-buttons">
+<a class="primary-button" data-app-view="recipe" href="#recipe-view">
+                        Find my next meal →
+                    </a>
+<a class="secondary-button" data-app-view="recipe" href="#recipe-view">
+                        Explore recipes
+                    </a>
+</div>
+<div class="hero-note">
+                    ✦ Made for everyday kitchens
+                </div>
+</div>
+<div class="hero-image">
+<img alt="Fresh ingredients arranged on a kitchen table" src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<div class="image-note">
+<span>🥑</span>
+<div>
+<strong>Make more with less</strong>
+<small>Your pantry has possibilities</small>
+</div>
+</div>
+</div>
+</section><section class="stats">
+<div>
+<strong>118</strong>
+<span>Recipes &amp; drinks</span>
+</div>
+<div>
+<strong>4</strong>
+<span>Meal categories</span>
+</div>
+<div>
+<strong>100%</strong>
+<span>Kitchen creativity</span>
+</div>
+</section><section class="section info-section" id="about">
+<div class="section-heading"><div><span class="eyebrow">MORE THAN RECIPES</span><h2>Your kitchen, thoughtfully planned.</h2><p>RecipeNest brings recipe discovery, meal planning, nutrition habits and grocery organization together in one simple place.</p></div></div>
+<div class="feature-grid">
+<article class="feature-card"><span>🥗</span><h3>Plan with purpose</h3><p>Organize meals and keep an eye on your daily calorie goal.</p></article>
+<article class="feature-card"><span>🧺</span><h3>Waste less</h3><p>Start with ingredients you already have and identify what is missing.</p></article>
+<article class="feature-card"><span>🌍</span><h3>Explore cuisines</h3><p>Discover everyday dishes and drinks from different food cultures.</p></article>
+<article class="feature-card"><span>⏱️</span><h3>Save time</h3><p>Keep your meal ideas and shopping list organized in one place.</p></article>
+</div>
+</section><section class="section info-section" id="different">
+<div class="section-heading"><div><span class="eyebrow">WHAT MAKES US DIFFERENT</span><h2>More than a recipe collection.</h2><p>RecipeNest connects what is in your kitchen with the meals you plan and the nutrition information you want to understand.</p></div></div>
+<div class="feature-grid">
+<article class="feature-card"><span>🥕</span><h3>Ingredient-first discovery</h3><p>Search by ingredients, cuisine or meal category and make better use of what you have.</p></article>
+<article class="feature-card"><span>🛒</span><h3>Connected groceries</h3><p>Missing ingredients from planned recipes can be gathered into one shopping list.</p></article>
+<article class="feature-card"><span>📊</span><h3>Food and nutrition together</h3><p>See estimated calories and macronutrients alongside your planned meals.</p></article>
+<article class="feature-card"><span>🌱</span><h3>Progress that stays</h3><p>Your browser can remember your pantry, meal plan, preferences and progress.</p></article>
+</div>
+</section><section class="section info-section" id="benefits">
+<div class="section-heading"><div><span class="eyebrow">WHY RECIPENEST</span><h2>Small steps make everyday planning easier.</h2></div></div>
+<div class="feature-grid">
+<article class="feature-card"><span>⏱️</span><h3>Save planning time</h3><p>Keep meal ideas and shopping notes in one place.</p></article>
+<article class="feature-card"><span>🌍</span><h3>Explore cuisines</h3><p>Find inspiration across familiar and new food traditions.</p></article>
+<article class="feature-card"><span>♻️</span><h3>Reduce food waste</h3><p>Start with pantry ingredients before buying more.</p></article>
+<article class="feature-card"><span>🥗</span><h3>Understand nutrition</h3><p>Use estimated food information to support informed choices.</p></article>
+<article class="feature-card"><span>🧾</span><h3>Organize shopping</h3><p>Collect missing ingredients and check them off as you shop.</p></article>
+<article class="feature-card"><span>🎯</span><h3>Build consistency</h3><p>Set simple goals and revisit your progress.</p></article>
+</div>
+</section><section class="section info-section" id="services">
+<div class="section-heading"><div><span class="eyebrow">SERVICES</span><h2>Helpful tools for your food routine.</h2></div></div>
+<div class="service-grid">
+<article>🍲 <strong>Recipe Discovery</strong><p>Explore a broad recipe collection.</p></article><article>🗓️ <strong>Smart Recipe Planner</strong><p>Build meals from recipes you like.</p></article><article>🥑 <strong>Meal Planner</strong><p>Organize breakfast, lunch, dinner and snacks.</p></article><article>🔥 <strong>Calorie Tracker</strong><p>Compare planned calories with a daily goal.</p></article><article>📈 <strong>Nutrition Tracker</strong><p>Review estimated macros from selected meals.</p></article><article>🛒 <strong>Grocery Generator</strong><p>Collect ingredients missing from your pantry.</p></article><article>⚖️ <strong>BMI Calculator</strong><p>Calculate a general screening estimate.</p></article><article>⚡ <strong>TDEE Calculator</strong><p>Estimate daily energy expenditure.</p></article><article>💧 <strong>Water Tracker</strong><p>Keep a simple count of water glasses.</p></article><article>🔁 <strong>Meal Suggestions</strong><p>Explore alternatives in the same meal category.</p></article>
+</div>
+</section><section class="section home-feature-section" id="daily-planning-info">
+<div class="home-feature-copy">
+<span class="eyebrow">03 / DAILY PLANNING</span>
+<h2>Make space for meals that fit your day.</h2>
+<p>Bring breakfast, lunch, dinner and snacks into one simple plan. Keep an eye on your calorie target and review estimated nutrition as you build your day.</p>
+<a class="primary-button" data-app-view="meal" href="#meal-view">Open Meal Planner →</a>
+</div>
+<div class="home-feature-visual daily-visual">
+<img alt="Balanced meal ingredients arranged for daily planning" loading="lazy" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"/>
+<div class="home-visual-note"><strong>Plan one meal at a time</strong><small>A little structure for everyday choices</small></div>
+</div>
+</section><section class="section home-feature-section home-feature-reverse" id="smart-shopping-info">
+<div class="home-feature-copy">
+<span class="eyebrow">04 / SMART SHOPPING</span>
+<h2>Shop for what you need. Use what you have.</h2>
+<p>Start with ingredients already in your kitchen, identify what is missing for planned recipes, and keep shopping items together. Make it easier to use ingredients before they go to waste.</p>
+<a class="primary-button" data-app-view="recipe" href="#recipe-view">Open Recipe Planner →</a>
+</div>
+<div class="home-feature-visual shopping-visual">
+<img alt="Fresh groceries and vegetables ready for smart shopping" loading="lazy" src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"/>
+<div class="home-visual-note"><strong>Your kitchen, organized</strong><small>Pantry matches and missing ingredients</small></div>
+</div>
+</section></div><!-- RECIPE VIEW: pantry, recipe discovery, recipe details and grocery tools. -->
+<div class="app-view workspace-view" data-page-view="recipe" hidden="" id="recipe-view"><section class="workspace-intro">
+<div><span class="eyebrow">YOUR KITCHEN WORKSPACE</span><h1>Recipe Planner</h1><p>Check your pantry, discover dishes, view cooking instructions and collect missing ingredients in one place.</p></div>
+<button class="back-home-link view-home-button" data-app-view="home" type="button">← Back to Home</button>
+</section><section class="section" id="pantry">
+<div class="section-heading">
+<div>
+<span class="eyebrow">01 / YOUR INGREDIENTS</span>
+<h2>What's in your kitchen?</h2>
+<p>
+                        Add what you have. We'll find meals
+                        that match your ingredients.
+                    </p>
+</div>
+</div>
+<div class="pantry-card">
+<label for="ingredientInput">
+                    Add your available ingredients
+                </label>
+<div class="ingredient-form">
+<input id="ingredientInput" placeholder="Try eggs, tomatoes, rice..." type="text"/>
+<button id="addIngredient">
+                        + Add ingredient
+                    </button>
+</div>
+<div class="ingredient-list" id="pantryItems">
+<!-- Pantry ingredients appear here -->
+</div>
+<div class="pantry-bottom">
+<span id="pantryCount">0 ingredients added</span>
+<button class="clear-button" id="clearPantry">
+                        Clear all
+                    </button>
+</div>
+<button class="primary-button find-button" id="findRecipes">
+                    Find recipes with my ingredients →
+                </button>
+</div>
+</section><section class="section" id="discover">
+<div class="section-heading">
+<div>
+<span class="eyebrow">02 / RECIPE DISCOVERY</span>
+<h2>Something delicious awaits.</h2>
+<p>
+                        Explore recipes and discover what you can cook today.
+                    </p>
+</div>
+</div>
+<div class="recipe-controls">
+<div class="category-filters">
+<button class="filter active" data-category="All">
+                        All
+                    </button>
+<button class="filter" data-category="Breakfast">
+                        Breakfast
+                    </button>
+<button class="filter" data-category="Lunch">
+                        Lunch
+                    </button>
+<button class="filter" data-category="Dinner">
+                        Dinner
+                    </button>
+<button class="filter" data-category="Snack">
+                        Snacks
+                    </button>
+<button class="filter" data-category="Dessert">Desserts</button>
+<button class="filter" data-category="Drinks">
+                        Drinks
+                    </button>
+</div>
+<input id="recipeSearch" placeholder="Search recipes..." type="search"/>
+</div>
+<div class="explore-all-tools">
+<label class="show-all-toggle"><input id="showAllRecipes" type="checkbox"/> <span>Show All Recipes</span></label>
+<button class="outline-button" id="discoverMore" type="button">Discover More Recipes ↻</button>
+<select aria-label="Filter by cuisine" id="cuisineFilter"><option value="All">All cuisines</option><option>Indian</option><option>Italian</option><option>Chinese</option><option>Mexican</option><option>Mediterranean</option><option>Continental</option><option>Japanese</option><option>Thai</option><option>Global</option></select>
+</div>
+<div class="results-info">
+<strong id="recipeCount">75 recipes</strong>
+<span>Recipes are ranked by pantry match</span>
+</div>
+<div class="recipe-grid" id="recipeGrid">
+<!-- Recipe cards are generated using app.js -->
+</div>
+</section><section class="section grocery-section" id="groceries">
+<div class="section-heading">
+<div>
+<span class="eyebrow">03 / SHOPPING LIST</span>
+<h2>Your grocery list.</h2>
+<p>
+                        Keep track of what you need. Ingredients missing
+                        from your planned meals are added automatically.
+                    </p>
+</div>
+</div>
+<div class="grocery-card grocery-card-updated">
+<div class="grocery-tools">
+<form class="grocery-add-form" id="groceryForm">
+<input aria-label="Grocery item" autocomplete="off" id="groceryInput" placeholder="Add an item to your list..." type="text"/>
+<button class="primary-button" id="addGrocery" type="submit">
+                            + Add item
+                        </button>
+</form>
+<div class="grocery-list-heading">
+<div>
+<strong>Shopping items</strong>
+<span id="groceryCount">0 items</span>
+</div>
+<button class="clear-button" id="clearCompletedGroceries" type="button">
+                            Clear completed
+                        </button>
+</div>
+<div class="grocery-list-updated" id="groceryList">
+<p class="empty-message">
+                            Your list is empty. Add an item or add a recipe to your meal plan.
+                        </p>
+</div>
+<div class="grocery-actions">
+<button class="primary-button" id="copyGrocery" type="button">
+                            Copy grocery list
+                        </button>
+</div>
+</div>
+</div>
+</section></div><!-- MEAL VIEW: daily meal selections, nutrition estimates and wellness tools. -->
+<div class="app-view workspace-view" data-page-view="meal" hidden="" id="meal-view"><section class="workspace-intro">
+<div><span class="eyebrow">YOUR DAILY WELLNESS WORKSPACE</span><h1>Meal &amp; Nutrition Planner</h1><p>Organize meals, set a calorie target, review estimated macros, track water and use simple nutrition tools.</p></div>
+<button class="back-home-link view-home-button" data-app-view="home" type="button">← Back to Home</button>
+</section><section class="section" id="planner">
+<div class="section-heading">
+<div>
+<span class="eyebrow">01 / MEAL ORGANIZATION</span>
+<h2>Plan your day.</h2>
+<p>
+                        Build a meal plan around your food preferences
+                        and calorie target.
+                    </p>
+</div>
+</div>
+<a class="back-home-link" data-app-view="home" href="#home">← Back to Home</a>
+<div class="planner-layout">
+<div class="meal-slots">
+<div class="meal-slot">
+<div class="meal-icon">☀</div>
+<div class="meal-info">
+<strong>Breakfast</strong>
+<span id="breakfastName">No meal selected</span>
+</div>
+<button class="slot-button" data-slot="Breakfast">
+                            + Add
+                        </button>
+<span id="breakfastCalories">—</span>
+</div>
+<div class="meal-slot">
+<div class="meal-icon">◒</div>
+<div class="meal-info">
+<strong>Lunch</strong>
+<span id="lunchName">No meal selected</span>
+</div>
+<button class="slot-button" data-slot="Lunch">
+                            + Add
+                        </button>
+<span id="lunchCalories">—</span>
+</div>
+<div class="meal-slot">
+<div class="meal-icon">☾</div>
+<div class="meal-info">
+<strong>Dinner</strong>
+<span id="dinnerName">No meal selected</span>
+</div>
+<button class="slot-button" data-slot="Dinner">
+                            + Add
+                        </button>
+<span id="dinnerCalories">—</span>
+</div>
+<div class="meal-slot">
+<div class="meal-icon">✳</div>
+<div class="meal-info">
+<strong>Snack</strong>
+<span id="snackName">No meal selected</span>
+</div>
+<button class="slot-button" data-slot="Snack">
+                            + Add
+                        </button>
+<span id="snackCalories">—</span>
+</div>
+</div>
+<aside class="nutrition-card">
+<span class="eyebrow">DAILY OVERVIEW</span>
+<label for="calorieGoal">
+                        Daily calorie target
+                    </label>
+<div class="calorie-input">
+<input id="calorieGoal" max="6000" min="500" type="number" value="2000"/>
+<span>kcal</span>
+</div>
+<div class="calorie-total">
+<strong id="totalCalories">0</strong>
+<span> / <span id="goalText">2,000</span> kcal</span>
+</div>
+<div class="progress-bar">
+<div id="progressFill"></div>
+</div>
+<p id="calorieMessage">
+                        Add meals to calculate your daily total.
+                    </p>
+<button class="outline-button" id="clearPlan">
+                        Clear meal plan
+                    </button>
+</aside>
+</div>
+</section><section class="section nutrition-dashboard" id="meal-dashboard">
+<div class="section-heading"><div><span class="eyebrow">02 / NUTRITION &amp; WELLNESS</span><h2>Meal &amp; nutrition planner.</h2><p>Set a goal, track hydration, and explore simple nutrition estimates.</p></div></div>
+<a class="back-home-link" data-app-view="home" href="#home">← Back to Home</a>
+<div class="dashboard-grid">
+<article class="dashboard-card calorie-dashboard">
+<h3>Daily calorie goal</h3><label for="dailyGoalNew">Your target (kcal)</label>
+<input id="dailyGoalNew" max="6000" min="500" type="number" value="2000"/>
+<div class="dash-number"><strong id="dashCalories">0</strong><span> kcal planned</span></div>
+<div class="dash-track"><span id="dashCalorieBar"></span></div>
+<p id="dashCalorieText">Plan meals in the RecipeNest meal planner to see your progress.</p>
+</article>
+<article class="dashboard-card water-dashboard">
+<h3>Water tracker</h3><p class="dash-muted">A simple way to remember your water intake.</p>
+<div class="dash-number"><strong id="waterCount">0</strong><span> / <span id="waterGoalText">8</span> glasses</span></div>
+<div class="dash-track"><span id="waterBar"></span></div>
+<div class="water-controls"><button id="addWater" type="button">+ Add a glass</button><button class="soft-button" id="removeWater" type="button">Undo</button></div>
+<label for="waterGoal">Daily goal (glasses)</label><input id="waterGoal" max="30" min="1" type="number" value="8"/>
+</article>
+<article class="dashboard-card diet-dashboard">
+<h3>Diet preference</h3><p class="dash-muted">Choose a preference to guide your recipe choices.</p>
+<label for="dietPreference">Preferred eating style</label>
+<select id="dietPreference"><option>Vegetarian</option><option>Vegan</option><option>Keto</option><option>Mediterranean</option><option>High Protein</option><option>Jain</option><option>Pescatarian</option><option>Gluten Free</option><option>Dairy Free</option></select>
+<p class="dash-note">Your preference is saved in this browser. Suggestions are matched against the listed ingredients and estimated nutrition; always check ingredients and product labels.</p>
+<div aria-live="polite" class="diet-suggestions">
+<div class="diet-suggestions-heading"><h4>Three high-calorie suggestions</h4><span>Picked for your preference</span></div>
+<div class="diet-suggestion-list" id="dietSuggestionList"><p class="dash-note">Choose a diet preference to see recipe ideas.</p></div>
+</div>
+</article>
+<article class="dashboard-card calculator-dashboard">
+<h3>BMI calculator</h3><div class="two-inputs"><label>Height (cm)<input id="bmiHeight" max="250" min="50" placeholder="e.g. 170" type="number"/></label><label>Weight (kg)<input id="bmiWeight" max="400" min="10" placeholder="e.g. 65" type="number"/></label></div>
+<button id="calculateBmi" type="button">Calculate BMI</button><p class="calc-result" id="bmiResult">Enter your height and weight.</p><small>BMI is a general screening measure, not a complete health assessment.</small>
+</article>
+<article class="dashboard-card calculator-dashboard tdee-card">
+<h3>Estimated daily energy (TDEE)</h3><div class="two-inputs"><label>Age<input id="tdeeAge" max="100" min="15" placeholder="Years" type="number"/></label><label>Sex for formula<select id="tdeeSex"><option value="female">Female</option><option value="male">Male</option></select></label><label>Height (cm)<input id="tdeeHeight" placeholder="170" type="number"/></label><label>Weight (kg)<input id="tdeeWeight" placeholder="65" type="number"/></label></div>
+<label for="activityLevel">Activity level</label><select id="activityLevel"><option value="1.2">Sedentary</option><option value="1.375">Lightly active</option><option value="1.55">Moderately active</option><option value="1.725">Very active</option><option value="1.9">Extra active</option></select>
+<button id="calculateTdee" type="button">Estimate TDEE</button><p class="calc-result" id="tdeeResult">Complete the fields to estimate.</p><small>This is an estimate using the Mifflin-St Jeor equation. Individual needs vary.</small>
+</article>
+<article class="dashboard-card macro-dashboard"><h3>Estimated macronutrients</h3><div class="macro-summary" id="macroSummary"><span>Carbs <b>0 g</b></span><span>Protein <b>0 g</b></span><span>Fat <b>0 g</b></span></div><p class="dash-note">Totals are estimates based on the recipes currently in your meal plan.</p></article>
+<article class="dashboard-card achievements-dashboard"><h3>Your milestones</h3><div class="achievement-list" id="achievementList"><span>🌱 First recipe planned</span><span>💧 Hydration habit</span><span>🛒 Shopping list started</span></div><p class="dash-note">Milestones unlock through saved planner activity in this browser.</p></article>
+</div>
+</section></div><div class="app-view workspace-view profile-page-view" data-page-view="profile" hidden="" id="profile-view"><section class="workspace-intro">
+<div><span class="eyebrow">YOUR PERSONAL WORKSPACE</span><h1>Login / Profile</h1><p>Access your demo profile and review your saved planning preferences and progress.</p></div>
+<button class="back-home-link view-home-button" data-app-view="home" type="button">← Back to Home</button>
+</section><section class="profile-panel" id="profilePanel">
+<div class="profile-panel-inner"><button aria-label="Close" class="profile-close" id="closeProfile" type="button">×</button><span class="eyebrow">YOUR RECIPENEST PROFILE</span><strong id="profileGreeting">Welcome to RecipeNest</strong><h2 id="authTitle">Welcome back</h2><p class="dash-muted">Demo profile only. This does not create secure accounts or authenticate with a server. Passwords are never saved.</p><div class="profile-stats" id="profileStats">Your planner totals and preferences appear here after you start planning.</div>
+<form id="demoAuthForm"><label hidden="">Full name<input id="authName" placeholder="Your name" type="text"/></label><label>Email address<input id="authEmail" placeholder="you@example.com" required="" type="email"/></label><label>Password<input id="authPassword" minlength="6" placeholder="At least 6 characters" required="" type="password"/></label><label hidden="" id="confirmPasswordWrap">Confirm password<input id="authConfirm" minlength="6" placeholder="Repeat your password" type="password"/></label><label class="remember-label"><input id="rememberMe" type="checkbox"/> Remember this demo profile on this browser</label><button id="authSubmit" type="submit">Continue</button><button class="text-button" id="forgotPassword" type="button">Forgot password?</button></form>
+<button class="text-button" id="authModeToggle" type="button">Create a demo profile instead</button><button hidden="" id="logoutButton" type="button">Log out</button><button class="text-button danger-text" id="resetSavedData" type="button">Reset saved planner data</button>
+</div>
+</section></div>
+
+</main>
+<!-- ================= FOOTER ================= -->
+<footer>
+<a aria-label="RecipeNest home" class="logo" data-app-view="home" href="#home">
+<span aria-hidden="true" class="logo-icon">
+<svg fill="none" height="25" viewBox="0 0 32 32" width="25">
+<circle cx="15.5" cy="16" r="7.2" stroke="currentColor" stroke-width="2.2"></circle>
+<path d="M5 7v7M2.8 7v4.2c0 1.4 1 2.4 2.2 2.4s2.2-1 2.2-2.4V7M5 13.6V25M26.5 7c-2.4 2.1-3.5 4.8-3.5 8.2V25M26.5 7v18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</span>
+<span class="logo-word"><span>Recipe</span><span>Nest</span></span>
+</a>
+<p>Good food. Smart choices. Less waste.</p>
+<small>
+            RecipeNest Student Project · Version 1.0
+        </small>
+</footer>
+<!-- Notification -->
+<div class="toast" id="toast"></div>
+<!-- JavaScript files -->
+<!-- recipes.js must load before app.js -->
+<!-- Load recipe data before scripts that read the RECIPES array. -->
+<script src="recipes.js"></script>
+<!-- Core pantry, recipe matching, meal and grocery interactions. -->
+<script src="app.js"></script>
+<!-- Profile, preferences, water and nutrition helper features. -->
+<script src="enhancements.js"></script>
+<!-- Recipe cards, meal planning, grocery generation and palette enhancements. -->
+<script src="platform.js"></script>
+<!-- Load navigation last so all page sections and controls already exist. -->
+<script src="navigation.js"></script>
+</body>
+</html>
